@@ -22,7 +22,7 @@ jobs:
           node-version: "20"
 
       - name: Install dependencies
-        run: npm ci
+        run: npm install
 
       - name: Start Juice Shop in background
         run: |
@@ -37,7 +37,7 @@ jobs:
           cmd_options: "-a -r zap_report.html"
         continue-on-error: true
 
-      - name: 📤 Upload ZAP Report
+      - name: Upload ZAP Report
         uses: actions/upload-artifact@v4
         with:
           name: zap-scan-report
